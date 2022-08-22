@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import "./App.css"
-import { numbers, upperCaseLetters, lowerCaseLetters, specialCharacters } from './Character'
+import { numbers, upperCaseLetters, lowerCaseLetters, specialCharacters } from './components/Character'
 import { toast, ToastContainer } from 'react-toastify'
+import { COPY_Fail, COPY_SUCCESS } from './components/message';
+
+import "./App.css"
 import 'react-toastify/dist/ReactToastify.css';
-import { COPY_Fail, COPY_SUCCESS } from './message';
 
 const App = () => {
   const [password, setPassword] = useState("")
@@ -90,12 +91,12 @@ const App = () => {
       <div className="container">
         <div className="generator">
           <h2 className="generator__header">
-           Password Generator
+            Password Generator
           </h2>
           <div className="generator__password">
             <h3 >{password}</h3>
             <button className="copy__btn">
-              <i onClick={handleCopyPassword} className="far fa-clipboard"></i>
+              <i onClick={handleCopyPassword} className="fa fa-clipboard"></i>
             </button>
           </div>
           <div className="form-group">
